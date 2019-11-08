@@ -1,0 +1,303 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* navigation bar begin */
+a{
+	text-decoration: none;
+	color: #eee;
+}
+
+header{
+	width: 100%;
+	height: 20vh;
+	position: relative;
+  overflow: hidden;
+  font-size: 8px;
+	font-family: 'Bebas Neue', sans-serif;
+}
+
+.container{
+	max-width: 120rem;
+	width: 90%;
+	margin: 0 auto;
+}
+
+.menu-toggle{
+	position: fixed;
+	top: 2.5rem;
+	right: 2.5rem;
+	color: #eeeeee;
+	font-size: 3rem;
+	cursor: pointer;
+	z-index: 1000;
+	display: none;
+}
+
+nav{
+	padding-top: 1rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	text-transform: uppercase;
+	font-size: 1.2rem;
+  width: 90%;
+  position: absolute;
+  z-index: 2;
+  /* edits made start*
+  width: 450px;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  z-index: 9999;
+  * edits made finish*/
+}
+
+.brand{
+  padding-right: 10vh;
+	font-size: 3rem;
+	font-weight: 300;
+	transform: translateX(-100rem);
+	animation: slideIn .5s forwards;
+}
+
+.brand span{
+	color: crimson;
+}
+
+nav ul{
+	display: flex;
+}
+
+nav ul li{
+	list-style: none;
+	transform: translateX(100rem);
+	animation: slideIn .5s forwards;
+}
+
+nav ul li:nth-child(1){
+	animation-delay: 0s;
+}
+
+nav ul li:nth-child(2){
+	animation-delay: .5s;
+}
+
+nav ul li:nth-child(3){
+	animation-delay: 1s;
+}
+
+nav ul li:nth-child(4){
+	animation-delay: 1.5s;
+}
+nav ul li:nth-child(5){
+	animation-delay: 2s;
+}
+nav ul li a{
+	padding: 1rem 0;
+	margin: 0 3rem;
+	position: relative;
+	letter-spacing: 2px;
+}
+
+nav ul li a:last-child{
+	margin-right: 0;
+}
+
+nav ul li a::before,
+nav ul li a::after{
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 2px;
+	background-color: crimson;
+	left: 0;
+	transform: scaleX(0);
+	transition: all .5s;
+}
+
+nav ul li a::before{
+	top: 0;
+	transform-origin: left;
+}
+
+nav ul li a::after{
+	bottom: 0;
+	transform-origin: right;
+}
+
+.overlay{
+	background-color: rgba(0,0,0,.95);
+	position: fixed;
+	right: 0;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	transition: opacity 650ms;
+	transform: scale(0);
+	opacity: 0;
+  display: none;
+}
+
+nav ul li a:hover::before,
+nav ul li a:hover::after{
+	transform: scaleX(1);
+}
+
+@keyframes slideIn {
+	from{
+
+	}
+	to{
+		transform: translateX(0);
+	}
+}
+
+@media screen and (max-width: 700px){
+
+	.menu-toggle{
+		display: block;
+	}
+
+	nav{
+		padding-top: 35vh;
+		display: none;
+		flex-direction: column;
+		justify-content: space-evenly;
+		align-items: center;
+		height: 100vh;
+		text-align: center;
+	}
+
+	nav ul{
+		flex-direction: column;
+	}
+
+	nav ul li{
+		margin-top: 5rem;
+	}
+
+	nav ul li a{
+		margin: 0;
+		font-size: 2.5rem;
+	}
+
+	.brand{
+		font-size: 5rem;
+	}
+
+  .overlay.menu-open,
+  nav.menu-open{
+	  display: flex;
+	  transform: scale(1);
+	  opacity: 1;
+  }
+
+}
+/* navigation bar end */
+.title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+  font-family: 'Bebas Neue', sans-serif;
+}
+h2{
+  font-size: 8em;
+  color: #333;
+  font-weight: 500;
+  background-color: blue;
+}
+h2 span{
+  animation: animate 1s linear infinite;
+}
+h2 span:nth-child(1)
+{
+  animation-delay: 0s;
+}
+h2 span:nth-child(2)
+{
+  animation-delay: 0.2s;
+}
+h2 span:nth-child(3)
+{
+  animation-delay: 0.4s;
+}
+h2 span:nth-child(4)
+{
+  animation-delay: 0.6s;
+}
+h2 span:nth-child(5)
+{
+  animation-delay: 0.8s;
+}
+@keyframes animate
+{
+  0%,80%
+  {
+    color: #black;
+    box-shadow: none;
+  }
+  100%
+  {
+    color: #fff;
+    text-shadow: 0 0 10px #fff,
+                0 0 20px #fff,
+                0 0 40px #fff,
+                0 0 80px #fff,
+                0 0 1200px #fff,
+                0 0 160px #fff;
+  }
+}
+.description{
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 10vh;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2em;
+  color: white;
+}
+section{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url(./img/bg.jpeg);
+  background-size: cover;
+  animation: color-change 2s linear infinite;
+}
+section::before
+{
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: url(./img/rain.png);
+animation: rain 0.2s linear infinite;
+}
+@keyframes color-change
+{
+  0%, 100%
+  {
+    filter: hue-rotate(0deg);
+  }
+  50%{
+    filter: hue-rotate(360deg);
+  }
+}
+@keyframes rain
+{
+  0%
+  {
+    background-position: 0 0;
+  }
+  100%
+  {
+    background-position: 20% 100%;
+  }
+}
+h3{
+  background-color: blue;
+}
