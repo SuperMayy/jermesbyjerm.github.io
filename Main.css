@@ -213,7 +213,7 @@ nav ul li a:hover::after{
 .infoSection{
     height: 300px;
     width: 450px;
-    background-color:black;
+    background-color:#1b1e21;
     position: relative;
     margin-top: 25px;
     margin-left: -150px;
